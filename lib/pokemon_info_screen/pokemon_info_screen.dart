@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mini_pokedex/pokemon_info_screen/pokemon_info.dart';
 
-
 class PokemonInfoScreen extends StatelessWidget {
-  const PokemonInfoScreen({super.key});
+  final int pokemonIndex;
+
+  const PokemonInfoScreen({super.key, required this.pokemonIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class PokemonInfoScreen extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Pokedex'),
       ),
-      body: const PokemonInfo(),
+      body: PokemonInfo(pokemonIndex: pokemonIndex),
     );
   }
 }

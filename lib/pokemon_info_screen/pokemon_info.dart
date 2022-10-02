@@ -11,7 +11,9 @@ import 'package:mini_pokedex/utils/string_extension.dart';
 import 'package:mini_pokedex/classes/pokemon.dart';
 
 class PokemonInfo extends StatefulWidget {
-  const PokemonInfo({super.key});
+  final int pokemonIndex;
+
+  const PokemonInfo({super.key, required this.pokemonIndex});
 
   @override
   State<PokemonInfo> createState() => _PokemonInfoState();
@@ -19,7 +21,6 @@ class PokemonInfo extends StatefulWidget {
 
 class _PokemonInfoState extends State<PokemonInfo> {
   late Future<Pokemon> futurePokemon;
-  final int randomPokemonId = Random().nextInt(250) + 1;
 
   @override
   void initState() {
@@ -27,9 +28,11 @@ class _PokemonInfoState extends State<PokemonInfo> {
     futurePokemon = fetchPokemon();
   }
 
+  int get pokemonId => widget.pokemonIndex + 1;
+
   Future<Pokemon> fetchPokemon() async {
     final response = await http.get(
-      Uri.parse('https://pokeapi.co/api/v2/pokemon-species/$randomPokemonId'),
+      Uri.parse('https://pokeapi.co/api/v2/pokemon-species/$pokemonId'),
     );
 
     if (response.statusCode == 200) {
@@ -76,7 +79,7 @@ class _PokemonInfoState extends State<PokemonInfo> {
           child: Column(
             children: [
               Image.network(
-                getPokemonImageUrl(id: randomPokemonId),
+                getPokemonImageUrl(id: pokemonId),
                 height: 150,
               ),
             ],
