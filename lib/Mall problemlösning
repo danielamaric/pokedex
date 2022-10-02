@@ -1,0 +1,37 @@
+1. Samla information, förstå relevanta koncept, formulera och besvara viktiga frågor
+2. Formulera en fråga som beskriver problemet
+3. Bryt ner till delfrågor
+4. Hitta lösningsförslag till delfrågor
+5. Börja lösa delproblem
+
+
+Exempel 3:
+1. Style guide och best practices. Effective Dart.
+2. Öka läsbarheten och "clean up the code". 
+3.
+a) Applicera style guide för att göra koden mer läsbar
+b) Snygga till sidan för pokemon med en till info-punkt och stilren design.
+c) Lägg in koden i git-repo, fyll i readme.
+
+
+Exempel 2:
+
+2. Hur kan man trycka på en knapp för att navigera till en ny sida med bulbasaur och dens info.
+3. 
+a) Vilken info är aktuell? Bild, namn, curiosa?
+b) Hur visar jag pokemon infon i appen?
+c) Skapa en ny navigation där pokemon visas, med en knapp som leder dit ("show pokemon")
+
+Exempel 1:
+1. Vad är/hur används API? Vad är ett GET/POST request, vad är JSON?
+2. Hur hämtar jag pokedex info om en pokemon ”Bulbasaur” från pokemon rest api i flutter
+3. 
+a) Vilken URL som ska användas?
+-Kolla i dokumentationen för pokedex 
+-Googla hur andra använt API och vilken url de använt
+”How to get pokedex info using pokeAPI” 
+
+b) Hur hämtar jag datan från url i flutter (get request)?
+
+
+c) Hur använder jag datan som jag fått?
