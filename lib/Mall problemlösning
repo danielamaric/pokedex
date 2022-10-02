@@ -5,13 +5,46 @@
 5. Börja lösa delproblem
 
 
+Föräldersidan:
+3 bookmarked pokemons
+  1. Lägg en pokemon i shared preference. Klicka för att visa denna.
+  2. 
+  - shared preferences, lagra pokemon som json
+  - Visa upp till tre bokmärkta pokemons. Klicka -> specifik pokemon_info
+  - Ta bort bookmark med ett litet kryss
+Search for pokemon
+  - Autocomplete (list of pokemon names)
+  - specifik pokemon pokemon_info
+Show me a random pokemon
+  - random pokemon_info
+
+Effektivisera 
+  - Lagra alla pokemons som hämtats i shared prefereces
+
+  Pokemon info 
+    - Happy UX, name, info, evolutions, conditions for evolutions
+
+
+
+-Lägga till ett bokmärke på en pokemon så de kan återkomma till denna 
+-(Knapp som leda till sparade pokemons som ska lagras)
+-(Knapp för att lagra pokemons i denna lista)
+-Söka efter en pokemon och få info om denna. Ett mini library. Spellproof. MiniLibrary. 
+-Kanske göra en gridview med pokemons istället så de får scrolla?
+
+Förenkling: Sökfält med id som tar fram view för den specifika pokemon?
+
+Exempel 4: 
+- 
+1. 
+
+
 Exempel 3:
 1. Style guide och best practices. Effective Dart.
 2. Öka läsbarheten och "clean up the code". 
 3.
 a) Applicera style guide för att göra koden mer läsbar
-b) Snygga till sidan för pokemon med en till info-punkt och stilren design.
-c) Lägg in koden i git-repo, fyll i readme.
+b) Lägg in koden i git-repo, fyll i readme.
 
 
 Exempel 2:

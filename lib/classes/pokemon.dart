@@ -2,13 +2,9 @@ class Pokemon {
   final String name;
   final String flavorText;
 
-  //final String pokeImg;
-
   const Pokemon({
     required this.name,
     required this.flavorText,
-
-    //required this.pokeImg,
   });
 
   factory Pokemon.fromJson(Map<String, dynamic> json) {

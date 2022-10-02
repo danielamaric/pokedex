@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mini_pokedex/main_menu_route.dart';
+import 'package:mini_pokedex/main_menu_screen/main_menu_screen.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('PokeDex'),
-        ),
-        body: const MainMenuRoute(),
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const MainMenuRoute(),
     );
   }
-}
+} 
