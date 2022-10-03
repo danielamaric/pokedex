@@ -35,7 +35,7 @@ class Pokemon {
 
     final String englishFlavorText = englishFlavorEntry['flavor_text'];
     final Map<String, dynamic> pokemonColor = json['color'];
-    final Map<String, dynamic> evolvesFromSpecies =
+    final Map<String, dynamic>? evolvesFromSpecies =
         json['evolves_from_species'];
 
 // to avoid silent errors regarding type the variables are created type specifically before returning
