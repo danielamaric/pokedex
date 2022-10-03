@@ -45,7 +45,7 @@ class Pokemon {
     final int captureRate = json['capture_rate'];
     final String colorName = pokemonColor['name'];
     final String evolvesFromSpeciesName =
-        evolvesFromSpecies?['name'] ?? 'This pokemon has not evolved yet';
+        evolvesFromSpecies?['name'] ?? '-';
     
 
     return Pokemon(
