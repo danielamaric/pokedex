@@ -1,7 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:mini_pokedex/api_helpers.dart';
+import 'package:mini_pokedex/utils/api_helpers.dart';
 import 'package:mini_pokedex/constants/padding.dart';
 import 'package:mini_pokedex/pokemon_info_screen/pokemon_info_text.dart';
 import 'package:mini_pokedex/utils/string_extension.dart';
@@ -21,7 +19,7 @@ class PokemonInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final capitalizedName = pokemon.name.capitalized;
-    
+
     return Padding(
       padding: const EdgeInsets.all(doublePadding),
       child: Card(

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:mini_pokedex/constants/padding.dart';
 import '../classes/pokemon.dart';
@@ -18,6 +16,8 @@ const _colorMap = {
   'black': Colors.black,
   'yellow': Colors.yellow,
 };
+
+Future<void> test() async {}
 
 class PokemonInfoText extends StatelessWidget {
   final Pokemon pokemon;

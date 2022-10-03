@@ -7,10 +7,6 @@ import 'package:mini_pokedex/pokemon_info_screen/pokemon_info_screen.dart';
 class RandomPokemonButton extends StatelessWidget {
   const RandomPokemonButton({super.key});
 
-  int get randomPokemonIndex {
-    return Random().nextInt(pokemonNames.length);
-  }
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -19,6 +15,8 @@ class RandomPokemonButton extends StatelessWidget {
       ),
       child: const Text('Surprise me with a Pokemon'),
       onPressed: () {
+        final randomPokemonIndex = Random().nextInt(pokemonNames.length);
+
         Navigator.push(
           context,
           MaterialPageRoute(

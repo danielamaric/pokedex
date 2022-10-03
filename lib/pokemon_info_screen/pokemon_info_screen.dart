@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:mini_pokedex/utils/api_helpers.dart';
 import 'package:mini_pokedex/classes/pokemon.dart';
 import 'package:mini_pokedex/pokemon_info_screen/pokemon_info.dart';
 
@@ -25,21 +27,16 @@ class _PokemonInfoScreenState extends State<PokemonInfoScreen> {
     futurePokemon = fetchPokemon();
   }
 
-  int get pokemonId => widget.pokemonIndex + 1;
-
   Future<Pokemon> fetchPokemon() async {
+    final pokemonId = widget.pokemonIndex + 1;
+
     final response = await http.get(
-      Uri.parse('https://pokeapi.co/api/v2/pokemon-species/$pokemonId'),
+      getPokemonDataUri(pokemonId),
     );
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
-
       return Pokemon.fromJson(jsonDecode(response.body));
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
       throw Exception('Failed to load album');
     }
   }
@@ -63,7 +60,9 @@ class _PokemonInfoScreenState extends State<PokemonInfoScreen> {
                 pokemon: pokemon,
               );
             } else if (snapshot.hasError) {
-              print(snapshot.error);
+              if (kDebugMode) {
+                print(snapshot.error);
+              }
               return Container();
             } else {
               return const CircularProgressIndicator();

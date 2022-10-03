@@ -5,8 +5,6 @@ import 'dart:math';
 import 'package:mini_pokedex/utils/string_extension.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
-// Demo list to show querying
-
   Widget buildItems(BuildContext context) {
     List<String> matchQuery = [];
     for (final pokemonName in pokemonNames) {
@@ -14,6 +12,7 @@ class CustomSearchDelegate extends SearchDelegate {
         matchQuery.add(pokemonName);
       }
     }
+
     return ListView.builder(
       itemCount: min(matchQuery.length, 10),
       itemBuilder: (context, index) {
@@ -37,8 +36,6 @@ class CustomSearchDelegate extends SearchDelegate {
     );
   }
 
-// first overwrite to
-// clear the search text
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -51,7 +48,6 @@ class CustomSearchDelegate extends SearchDelegate {
     ];
   }
 
-// second overwrite to pop out of search menu
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
@@ -62,14 +58,11 @@ class CustomSearchDelegate extends SearchDelegate {
     );
   }
 
-// third overwrite to show query result
   @override
   Widget buildResults(BuildContext context) {
     return buildItems(context);
   }
 
-// last overwrite to show the
-// querying process at the runtime
   @override
   Widget buildSuggestions(BuildContext context) {
     return buildItems(context);
