@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:mini_pokedex/classes/pokemon.dart';
+import 'package:mini_pokedex/constants/padding.dart';
 import 'package:mini_pokedex/main_menu_screen/custom_search_delegate.dart';
 import 'package:mini_pokedex/main_menu_screen/random_pokemon_button.dart';
 import 'package:http/http.dart' as http;
@@ -33,15 +34,18 @@ class MainMenuRoute extends StatelessWidget {
         title: const Text('Pokedex'),
         backgroundColor: Colors.red,
         actions: [
-          IconButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                // delegate to customize the search bar
-                delegate: CustomSearchDelegate(),
-              );
-            },
-            icon: const Icon(Icons.search),
+          Padding(
+            padding: const EdgeInsets.only(right: halfPadding),
+            child: IconButton(
+              onPressed: () {
+                showSearch(
+                  context: context,
+                  // delegate to customize the search bar
+                  delegate: CustomSearchDelegate(),
+                );
+              },
+              icon: const Icon(Icons.search),
+            ),
           )
         ],
       ),

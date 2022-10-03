@@ -5,13 +5,19 @@ import 'package:mini_pokedex/constants/padding.dart';
 import '../classes/pokemon.dart';
 import 'package:mini_pokedex/utils/string_extension.dart';
 
-const _colors = [
-  Colors.red,
-  Colors.blue,
-  Colors.green,
-  Colors.orange,
-  Colors.purple,
-];
+const _colorMap = {
+  'red': Colors.red,
+  'pink': Colors.pink,
+  'blue': Colors.blue,
+  'green': Colors.green,
+  'orange': Colors.orange,
+  'purple': Colors.purple,
+  'gray': Colors.grey,
+  'brown': Colors.brown,
+  'white': Colors.white,
+  'black': Colors.black,
+  'yellow': Colors.yellow,
+};
 
 class PokemonInfoText extends StatelessWidget {
   final Pokemon pokemon;
@@ -29,14 +35,12 @@ class PokemonInfoText extends StatelessWidget {
     final colorName = pokemon.colorName;
     final capitalizedEvolvesFromSpeciesName =
         pokemon.evolvesFromSpeciesName.capitalized;
-
-    final randomColorIndex = Random().nextInt(_colors.length);
-    final randomColor = _colors[randomColorIndex];
+    final color = _colorMap[colorName] ?? Colors.red;
 
     return Center(
       child: Card(
         elevation: 0,
-        color: randomColor.withOpacity(0.15),
+        color: color.withOpacity(0.15),
         child: Padding(
           padding: const EdgeInsets.all(padding),
           child: Column(
@@ -60,7 +64,7 @@ class PokemonInfoText extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: padding),
-                child: Text('Color name: $colorName'),
+                child: Text('Color: $colorName'),
               ),
               Text('Evolves from: $capitalizedEvolvesFromSpeciesName'),
             ],

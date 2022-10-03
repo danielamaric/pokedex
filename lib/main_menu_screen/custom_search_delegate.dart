@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_pokedex/constants/pokemon_names.dart';
 import 'package:mini_pokedex/pokemon_info_screen/pokemon_info_screen.dart';
 import 'dart:math';
+import 'package:mini_pokedex/utils/string_extension.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
 // Demo list to show querying
@@ -30,7 +31,7 @@ class CustomSearchDelegate extends SearchDelegate {
               ),
             );
           },
-          title: Text(result),
+          title: Text(result.capitalized),
         );
       },
     );
