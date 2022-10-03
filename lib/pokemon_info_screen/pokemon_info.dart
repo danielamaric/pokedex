@@ -1,13 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 import 'package:mini_pokedex/api_helpers.dart';
-import 'dart:math';
 import 'package:mini_pokedex/utils/string_extension.dart';
-
 import 'package:mini_pokedex/classes/pokemon.dart';
 
 class PokemonInfo extends StatefulWidget {
@@ -61,13 +56,27 @@ class _PokemonInfoState extends State<PokemonInfo> {
                       final pokemon = snapshot.data!;
                       final flavorText = pokemon.flavorText.withoutLinebreaks;
                       final name = pokemon.name;
+                      final baseHappiness = pokemon.baseHappiness;
+                      final captureRate = pokemon.captureRate;
+                      final colorName = pokemon.colorName;
+                      final evolvesFromSpecies = pokemon.evolvesFromSpeciesName;
 
                       return Column(
                         children: [
                           Text(name),
                           Text(flavorText),
+                          Text(
+                            'Base happiness rate: $baseHappiness',
+                            textAlign: TextAlign.start,
+                          ),
+                          Text('Capture rate: $captureRate'),
+                          Text('Color name rate: $colorName'),
+                          Text('Evolves from: $evolvesFromSpecies'),
                         ],
                       );
+                    } else if (snapshot.hasError) {
+                      print(snapshot.error);
+                      return Container();
                     } else {
                       return const CircularProgressIndicator();
                     }
