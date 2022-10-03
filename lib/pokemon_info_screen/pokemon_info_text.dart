@@ -53,17 +53,17 @@ class PokemonInfoText extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: padding),
+                padding: const EdgeInsets.only(bottom: halfPadding),
                 child: Text(
                   'Base happiness rate: $baseHappiness',
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: padding),
+                padding: const EdgeInsets.only(bottom: halfPadding),
                 child: Text('Capture rate: $captureRate'),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: padding),
+                padding: const EdgeInsets.only(bottom: halfPadding),
                 child: Text('Color: $colorName'),
               ),
               Text('Evolves from: $capitalizedEvolvesFromSpeciesName'),

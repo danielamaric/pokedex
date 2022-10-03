@@ -47,6 +47,7 @@ class _PokemonInfoScreenState extends State<PokemonInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: const Text('Pokedex'),

@@ -21,8 +21,9 @@ class PokemonInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final capitalizedName = pokemon.name.capitalized;
-    return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 400),
+    
+    return Padding(
+      padding: const EdgeInsets.all(doublePadding),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(doublePadding),
