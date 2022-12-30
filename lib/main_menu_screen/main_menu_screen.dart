@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mini_pokedex/constants/padding.dart';
+import 'package:mini_pokedex/main_menu_screen/bookmarked_pokemon_button.dart';
 import 'package:mini_pokedex/main_menu_screen/custom_search_delegate.dart';
 import 'package:mini_pokedex/main_menu_screen/random_pokemon_button.dart';
 
-class MainMenuRoute extends StatelessWidget {
-  const MainMenuRoute({super.key});
+class MainMenuScreen extends StatelessWidget {
+  const MainMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,7 @@ class MainMenuRoute extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             RandomPokemonButton(),
+            BookmarkedPokemonButton(),
           ],
         ),
       ),

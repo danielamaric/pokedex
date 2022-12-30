@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mini_pokedex/utils/api_helpers.dart';
-import 'package:mini_pokedex/constants/padding.dart';
-import 'package:mini_pokedex/pokemon_info_screen/pokemon_info_text.dart';
-import 'package:mini_pokedex/utils/string_extension.dart';
 import 'package:mini_pokedex/classes/pokemon.dart';
+import 'package:mini_pokedex/constants/padding.dart';
+import 'package:mini_pokedex/pokemon_info_screen/bookmark_button.dart';
+import 'package:mini_pokedex/pokemon_info_screen/pokemon_info_text.dart';
+import 'package:mini_pokedex/utils/api_helpers.dart';
+import 'package:mini_pokedex/utils/string_extension.dart';
 
 class PokemonInfo extends StatelessWidget {
   final int pokemonIndex;
@@ -50,6 +51,7 @@ class PokemonInfo extends StatelessWidget {
                   ),
                 ),
                 PokemonInfoText(pokemon: pokemon),
+                BookmarkButton(pokemon: pokemon),
               ],
             ),
           ),

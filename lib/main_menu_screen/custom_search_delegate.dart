@@ -1,7 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:mini_pokedex/constants/pokemon_names.dart';
 import 'package:mini_pokedex/pokemon_info_screen/pokemon_info_screen.dart';
-import 'dart:math';
 import 'package:mini_pokedex/utils/string_extension.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
@@ -25,8 +26,9 @@ class CustomSearchDelegate extends SearchDelegate {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    PokemonInfoScreen(pokemonIndex: pokemonNameIndex),
+                builder: (context) => PokemonInfoScreen(
+                  pokemonIndex: pokemonNameIndex,
+                ),
               ),
             );
           },
