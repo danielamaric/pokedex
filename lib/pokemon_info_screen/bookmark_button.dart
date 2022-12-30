@@ -14,7 +14,7 @@ class BookmarkButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isBookmarked = context.select(
-      (PokemonBookmarkCubit cubit) => cubit.state?.name == pokemon.name,
+      (PokemonBookmarkCubit cubit) => cubit.state.contains(pokemon.name),
     );
 
     return IconButton(
@@ -22,9 +22,9 @@ class BookmarkButton extends StatelessWidget {
         final pokemonBookmarkCubit = context.read<PokemonBookmarkCubit>();
 
         if (isBookmarked) {
-          pokemonBookmarkCubit.removePokemon();
+          pokemonBookmarkCubit.removePokemonName(pokemon.name);
         } else {
-          pokemonBookmarkCubit.addPokemon(pokemon);
+          pokemonBookmarkCubit.addPokemonName(pokemon.name);
         }
       },
       icon: Icon(

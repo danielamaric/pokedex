@@ -1,13 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mini_pokedex/classes/pokemon.dart';
 
-class PokemonBookmarkCubit extends Cubit<Pokemon?> {
-  PokemonBookmarkCubit() : super(null);
+class PokemonBookmarkCubit extends Cubit<List<String>> {
+  PokemonBookmarkCubit() : super([]);
 
-  void addPokemon(Pokemon pokemon) {
-    removePokemon();
-    return emit(pokemon);
+  void addPokemonName(String value) {
+    final newList = [...state];
+    newList.add(value);
+    emit(newList);
   }
 
-  void removePokemon() => emit(null);
+  void removePokemonName(String value) {
+    final newList = [...state];
+    newList.remove(value);
+    emit(newList);
+  }
 }

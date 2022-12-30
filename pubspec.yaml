@@ -39,6 +39,7 @@ dependencies:
   http: ^0.13.5
   pokeapi_dart: ^0.0.1-dev.1
   flutter_bloc: ^8.1.1
+  hydrated_bloc: ^9.0.0
 
 dev_dependencies:
   flutter_test:
